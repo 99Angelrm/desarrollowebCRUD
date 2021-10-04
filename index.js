@@ -6,6 +6,7 @@ const sequelize = require('./utils/database')
 
 //Importar rutas
 const vjRoutes = require('./routes/videojuegos')
+const consolaRoutes = require('./routes/consolas')
 //Crear una aplicación web
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({extended:true}))
 
 //Vinculamos la aplicación con los recursos de videojuegos
 app.use('/videojuegos',vjRoutes);
+app.use('/consolas',consolaRoutes);
 
 //sequelize.sync({force:true})
 sequelize.sync()
